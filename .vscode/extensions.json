@@ -5,6 +5,7 @@
     "yzhang.markdown-all-in-one",
     "jock.svg",
     "esbenp.prettier-vscode",
-    "kamikillerto.vscode-colorize"
+    "kamikillerto.vscode-colorize",
+    "bradlc.vscode-tailwindcss"
   ]
 }
