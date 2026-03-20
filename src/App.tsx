@@ -39,14 +39,22 @@ export default function App() {
     <div className="max-w-5xl mx-auto px-6 py-12">
       {/* Header / Identity */}
       <header className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-12 gap-6">
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight">
-            Lucas Ignacio Picchi
-          </h1>
-          <p className="text-sky-400 font-mono text-sm mt-2 uppercase tracking-widest">
-            Full Stack Tech Lead & IT Consultant
-          </p>
+        <div className="flex items-center gap-6">
+          <img
+            src="/logo.svg"
+            alt="Logo"
+            className="w-16 h-16 md:w-20 md:h-20 object-contain"
+          />
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Lucas Ignacio Picchi
+            </h1>
+            <p className="text-sky-400 font-mono text-sm mt-2 uppercase tracking-widest">
+              Full Stack Tech Lead & IT Consultant
+            </p>
+          </div>
         </div>
+
         <div className="text-right font-mono text-xs text-slate-500 space-y-1">
           <p>Mar del Plata, Argentina</p>
           <p>Argentina — Italia (Dual Citizenship)</p>
@@ -68,6 +76,86 @@ export default function App() {
           production systems, I build using modern methodologies and scalable
           cloud architecture.
         </p>
+      </section>
+
+      <section className="py-24 border-t border-slate-900">
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="md:w-1/3">
+            <h3 className="text-xs font-mono text-sky-500 uppercase tracking-widest mb-4">
+              The Approach
+            </h3>
+            <h4 className="text-3xl font-bold">
+              From Conception to Materialization.
+            </h4>
+          </div>
+          <div className="md:w-2/3 grid sm:grid-cols-2 gap-10">
+            <div>
+              <span className="text-slate-700 font-mono text-lg block mb-2">
+                01.
+              </span>
+              <h5 className="font-bold mb-2 text-slate-200">
+                Architectural Integrity
+              </h5>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Systems are only as strong as their foundation. I prioritize
+                clean domain modeling (UML/ERD) and scalable patterns
+                (AWS/Azure) before the first line of code is written.
+              </p>
+            </div>
+            <div>
+              <span className="text-slate-700 font-mono text-lg block mb-2">
+                02.
+              </span>
+              <h5 className="font-bold mb-2 text-slate-200">
+                Quality-First Execution
+              </h5>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Leveraging CI/CD pipelines (GitHub Actions/GitLab) to ensure
+                that what reaches production is resilient and maintainable.
+              </p>
+            </div>
+            <div>
+              <span className="text-slate-700 font-mono text-lg block mb-2">
+                03.
+              </span>
+              <h5 className="font-bold mb-2 text-slate-200">
+                Technical Stewardship
+              </h5>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Leadership is about cohesion. I mentor teams to follow
+                consistent coding standards and modern methodologies
+                (Scrum/Agile) to hit delivery milestones without burnout.
+              </p>
+            </div>
+            <div>
+              <span className="text-slate-700 font-mono text-lg block mb-2">
+                04.
+              </span>
+              <h5 className="font-bold mb-2 text-slate-200">
+                Full-Cycle Delivery
+              </h5>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Experience across the stack—from Android NDK to
+                CloudFormation—allows me to bridge technical silos and solve
+                problems that traditional "siloed" devs miss.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: The "Core Stack" Visualizer */}
+      <section className="py-12 px-8 bg-slate-900/20 border border-slate-800 rounded-3xl mb-24">
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+          {/* Using text labels since we don't have SVGs here, but imagine these as clean logos */}
+          <span className="font-mono text-xl tracking-tighter">React.js</span>
+          <span className="font-mono text-xl tracking-tighter">TypeScript</span>
+          <span className="font-mono text-xl tracking-tighter">.NET Core</span>
+          <span className="font-mono text-xl tracking-tighter">AWS/ECS</span>
+          <span className="font-mono text-xl tracking-tighter">PostgreSQL</span>
+          <span className="font-mono text-xl tracking-tighter">Terraform</span>
+          <span className="font-mono text-xl tracking-tighter">NodeJS</span>
+        </div>
       </section>
 
       {/* Expertise Grid */}
