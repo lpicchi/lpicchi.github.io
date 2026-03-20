@@ -1,162 +1,188 @@
 export default function App() {
+  const skills = [
+    {
+      category: "Languages",
+      items: ["TypeScript", "Java", "C#", "Python", "C++", "SQL"],
+    },
+    {
+      category: "Cloud & DevOps",
+      items: ["AWS (ECS/CDK)", "Azure", "Kubernetes", "CI/CD", "Terraform"],
+    },
+    {
+      category: "Frameworks",
+      items: ["React", ".NET Core", "Node.js", "Spring Boot", "FastAPI"],
+    },
+  ];
+
+  const experience = [
+    {
+      date: "2025 — Present",
+      role: "Full Stack Tech Lead",
+      company: "EXEO IT",
+      desc: "Guiding development teams in creating high-quality software solutions. Establishing development processes, ensuring code quality, and fostering collaborative environments.",
+    },
+    {
+      date: "2023 — 2025",
+      role: "Full Stack Lead Developer",
+      company: "EXEO IT",
+      desc: "Architecting and delivering end-to-end features for enterprise-level systems.",
+    },
+    {
+      date: "2019 — 2023",
+      role: "Fullstack Developer",
+      company: "DXC Technology",
+      desc: "Development of REST services and frontends using .NET Core and React for global enterprise clients.",
+    },
+  ];
+
   return (
-    <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
-      {/* Navbar */}
-      <header className="flex justify-between items-center px-8 py-6 border-b border-gray-800">
-        <h1 className="text-xl font-semibold tracking-tight">Lucas Picchi</h1>
-        <nav className="space-x-6 text-sm text-gray-400">
-          <a href="#services" className="hover:text-white">
-            Services
-          </a>
-          <a href="#projects" className="hover:text-white">
-            Projects
-          </a>
-          <a href="#about" className="hover:text-white">
-            About
-          </a>
-          <a href="#contact" className="hover:text-white">
-            Contact
-          </a>
-        </nav>
+    <div className="max-w-5xl mx-auto px-6 py-12">
+      {/* Header / Identity */}
+      <header className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-12 gap-6">
+        <div>
+          <h1 className="text-4xl font-bold tracking-tight">
+            Lucas Ignacio Picchi
+          </h1>
+          <p className="text-sky-400 font-mono text-sm mt-2 uppercase tracking-widest">
+            Full Stack Tech Lead & IT Consultant
+          </p>
+        </div>
+        <div className="text-right font-mono text-xs text-slate-500 space-y-1">
+          <p>Mar del Plata, Argentina</p>
+          <p>Argentina — Italia (Dual Citizenship)</p>
+          <p>English (Advanced / C1)</p>
+        </div>
       </header>
 
-      {/* Hero */}
-      <section className="px-8 py-24 max-w-5xl mx-auto">
-        <h2 className="text-5xl font-bold leading-tight mb-6">
-          IT Consultant & <br />
-          Full Stack Technical Leader
+      {/* Hero / Statement */}
+      <section className="py-20">
+        <h2 className="text-sm font-mono text-slate-500 uppercase tracking-tighter mb-6 underline decoration-sky-500/50 underline-offset-4">
+          Executive Summary
         </h2>
-
-        <p className="text-lg text-gray-400 max-w-2xl mb-8">
-          I help companies design, build and scale reliable software systems —
-          from cloud architecture to modern web applications.
+        <p className="text-2xl md:text-3xl leading-relaxed text-slate-200 max-w-4xl">
+          Systems Engineering specialist with a focus on the{" "}
+          <span className="text-white font-medium italic">
+            entire lifecycle
+          </span>{" "}
+          of software development. From early concept to high-availability
+          production systems, I build using modern methodologies and scalable
+          cloud architecture.
         </p>
-
-        <div className="flex gap-4">
-          <a
-            href="#contact"
-            className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200"
-          >
-            Contact Me
-          </a>
-          <a
-            href="#projects"
-            className="border border-gray-700 px-6 py-3 rounded-lg hover:border-gray-500"
-          >
-            View Work
-          </a>
-        </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="px-8 py-20 max-w-5xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-10">Services</h3>
+      {/* Expertise Grid */}
+      <section className="grid md:grid-cols-3 gap-8 py-16 border-y border-slate-900">
+        {skills.map((group) => (
+          <div key={group.category}>
+            <h3 className="text-xs font-mono text-slate-500 uppercase mb-4">
+              {group.category}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-sm text-slate-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Architecture",
-              desc: "Design of scalable cloud systems using AWS, GCP, and modern patterns.",
-            },
-            {
-              title: "Full Stack Development",
-              desc: "End-to-end applications using modern frameworks and best practices.",
-            },
-            {
-              title: "Tech Leadership",
-              desc: "Team mentoring, code quality, and delivery optimization.",
-            },
-          ].map((s) => (
-            <div
-              key={s.title}
-              className="border border-gray-800 p-6 rounded-xl hover:border-gray-600 transition"
-            >
-              <h4 className="text-lg font-medium mb-2">{s.title}</h4>
-              <p className="text-gray-400 text-sm">{s.desc}</p>
+      {/* Career Timeline */}
+      <section className="py-20">
+        <h3 className="text-xs font-mono text-slate-500 uppercase mb-12">
+          Professional Trajectory
+        </h3>
+        <div className="space-y-12">
+          {experience.map((job) => (
+            <div key={job.date} className="group grid md:grid-cols-12 gap-4">
+              <div className="md:col-span-3 text-sm font-mono text-slate-500 py-1">
+                {job.date}
+              </div>
+              <div className="md:col-span-9">
+                <h4 className="text-xl font-bold group-hover:text-sky-400 transition-colors">
+                  {job.role}{" "}
+                  <span className="text-slate-600 font-normal">
+                    @ {job.company}
+                  </span>
+                </h4>
+                <p className="text-slate-400 mt-3 leading-relaxed text-md max-w-2xl">
+                  {job.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="px-8 py-20 bg-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-2xl font-semibold mb-10">Selected Work</h3>
-
-          <div className="space-y-6">
-            {[
-              {
-                name: "Cloud Migration Platform",
-                desc: "Migrated legacy systems to AWS with scalable microservices architecture.",
-              },
-              {
-                name: "Real-time Data Dashboard",
-                desc: "Built high-performance dashboards with streaming data pipelines.",
-              },
-              {
-                name: "Enterprise Web Platform",
-                desc: "Developed multi-tenant SaaS application with modern frontend stack.",
-              },
-            ].map((p) => (
-              <div
-                key={p.name}
-                className="border border-gray-800 p-6 rounded-xl hover:border-gray-600 transition"
-              >
-                <h4 className="text-lg font-medium">{p.name}</h4>
-                <p className="text-gray-400 text-sm mt-2">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="px-8 py-20 max-w-5xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-6">About</h3>
-
-        <p className="text-gray-400 max-w-3xl leading-relaxed">
-          I’m a Full Stack Technical Leader with experience building scalable
-          software solutions across cloud platforms. My work spans backend,
-          frontend, and infrastructure, with a strong focus on reliability,
-          performance, and maintainability.
-        </p>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="px-8 py-20 bg-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-2xl font-semibold mb-6">Contact</h3>
-
-          <p className="text-gray-400 mb-6">
-            Let’s work together on your next project.
+      {/* Academic / Additional */}
+      <section className="grid md:grid-cols-2 gap-12 py-20 border-t border-slate-900">
+        <div>
+          <h3 className="text-xs font-mono text-slate-500 uppercase mb-6">
+            Education
+          </h3>
+          <p className="text-slate-300 font-medium">B.S. Systems Engineering</p>
+          <p className="text-sm text-slate-500">
+            UNICEN — National University of Central Buenos Aires
           </p>
-
-          <div className="flex gap-6 text-sm">
-            <a
-              href="mailto:your@email.com"
-              className="underline hover:text-white"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/lucaspicchi"
-              className="underline hover:text-white"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com"
-              className="underline hover:text-white"
-            >
-              LinkedIn
-            </a>
+          <div className="mt-4 space-y-2">
+            <p className="text-xs text-slate-500 italic">
+              Specializations: Parallel & Distributed Computing, Agile Methods.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 className="text-xs font-mono text-slate-500 uppercase mb-6">
+            Languages
+          </h3>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between border-b border-slate-900 pb-1">
+              <span>Spanish</span>
+              <span className="text-slate-500">Native</span>
+            </div>
+            <div className="flex justify-between border-b border-slate-900 pb-1">
+              <span>English</span>
+              <span className="text-slate-500">Advanced / Bilingual (C1)</span>
+            </div>
+            <div className="flex justify-between border-b border-slate-900 pb-1">
+              <span>Italian</span>
+              <span className="text-slate-500">Technical Reading</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="text-center text-gray-600 text-sm py-8 border-t border-gray-800">
-        © {new Date().getFullYear()} Lucas Picchi
+      {/* Contact CTA */}
+      <footer className="mt-20 p-12 bg-slate-900/50 rounded-3xl border border-slate-800 text-center">
+        <h3 className="text-2xl font-bold mb-4">
+          Ready to discuss your technical roadmap?
+        </h3>
+        <p className="text-slate-400 mb-8">
+          Currently available for specialized IT consulting and leadership
+          roles.
+        </p>
+        <div className="flex flex-col md:flex-row justify-center gap-6 items-center">
+          <a
+            href="mailto:lucas@lpicchi.dynv6.net"
+            className="text-sky-400 hover:text-white font-mono underline decoration-sky-500/30 underline-offset-8 transition-all"
+          >
+            Contact by email
+          </a>
+          <span className="hidden md:block text-slate-700">/</span>
+          <a
+            href="https://linkedin.com/in/lucas-picchi-bba01488/"
+            target="_blank"
+            className="text-slate-400 hover:text-white transition-colors"
+          >
+            LinkedIn
+          </a>
+        </div>
+        <p className="mt-12 text-[10px] text-slate-600 uppercase tracking-widest font-mono">
+          © {new Date().getFullYear()} — Built with React & Tailwind v4
+        </p>
       </footer>
     </div>
   );
